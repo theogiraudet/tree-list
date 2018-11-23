@@ -6,19 +6,27 @@ import fr.theogiraudet.testcompare.TestBenchTree;
 
 public class Main {
 
+	public static boolean SHOW_COMPARE = true;
+	public static boolean SHOW_TEST_BENCH = true;
+	
+	
 	public static void main(String... args) {
 		
-		Compare.compareAssocie(100_000);
-		Compare.compareGet(100_000);
-		Compare.compareSupprime(100_000);
+		if(SHOW_COMPARE) {
+			Compare.compareAssocie(10_000);
+			Compare.compareGet(10_000);
+			Compare.compareSupprime(10_000);
+		}
 		
-		TestBenchList.addListTest();
-		TestBenchList.getListTest();
-		TestBenchList.removeListTest();
-		
-		TestBenchTree.addTreeTest();
-		TestBenchTree.removeTreeTest();
-		TestBenchTree.getTreeTest();
+		if(SHOW_TEST_BENCH) {
+			TestBenchList.addListTest();
+			TestBenchList.getListTest();
+			TestBenchList.removeListTest();
+			
+			TestBenchTree.addTreeTest();
+			TestBenchTree.removeTreeTest();
+			TestBenchTree.getTreeTest();
+		}
 		
 		
 	}
